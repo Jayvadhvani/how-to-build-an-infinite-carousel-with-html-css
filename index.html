@@ -1,0 +1,176 @@
+<!DOCTYPE html><html lang="en"><head>
+  
+  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Build an Infinite Carousel with HTML &amp; CSS</title>
+    <style>
+        body { margin: 0; padding: 0; }
+        .marquee-wrapper {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          min-height: 100vh;
+          background-color: #0f172a;
+          color: white;
+          font-family: 'Inter', sans-serif;
+          overflow: hidden;
+        }
+        .marquee-wrapper h2 {
+          font-size: 2.5rem;
+          margin-bottom: 50px;
+          color: #38bdf8;
+        }
+        .marquee-container {
+          width: 100%;
+          max-width: 1000px;
+          overflow: hidden;
+          padding: 20px 0;
+          position: relative;
+          mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+          -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+        }
+        .marquee-track {
+          display: flex;
+          width: calc(200px * 16 + 20px * 16);
+          animation: scroll 20s linear infinite;
+        }
+        .marquee-track:hover {
+          animation-play-state: paused;
+        }
+        .marquee-item {
+          width: 200px;
+          height: 100px;
+          flex-shrink: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 1.5rem;
+          font-weight: 700;
+          color: #94a3b8;
+          background: rgba(255,255,255,0.05);
+          border: 1px solid rgba(255,255,255,0.1);
+          border-radius: 10px;
+          margin: 0 10px;
+          transition: all 0.3s ease;
+          cursor: pointer;
+        }
+        .marquee-item:hover {
+          background: #38bdf8;
+          color: #0f172a;
+          transform: scale(1.05);
+          box-shadow: 0 10px 25px rgba(56, 189, 248, 0.4);
+        }
+        @keyframes scroll {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(calc(-200px * 8 - 20px * 8)); }
+        }
+    </style>
+
+            <meta name="description" content="A beautiful component imported via Developer Studio AI.">
+            <meta name="robots" content="index, follow">
+            <meta property="og:title" content="How to Build an Infinite Carousel with HTML &amp; CSS">
+            <meta property="og:description" content="A beautiful component imported via Developer Studio AI.">
+            <meta property="og:image" content="https://codescompiler.com/images/posts/how-to-build-an-infinite-carousel-with-html-css-2.png">
+            <meta name="twitter:card" content="summary_large_image">
+            <meta name="twitter:title" content="How to Build an Infinite Carousel with HTML &amp; CSS">
+            <meta name="twitter:description" content="A beautiful component imported via Developer Studio AI.">
+            <meta name="twitter:image" content="https://codescompiler.com/images/posts/how-to-build-an-infinite-carousel-with-html-css-2.png">
+          </head>
+<body>
+
+<!-- ── CODESCOMPILER DEMO HEADER ── -->
+<style>
+  #cc-demo-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+    height: 48px;
+    background: #1a1b26;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    color: white;
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999999;
+  }
+  #cc-demo-header a { text-decoration: none; color: white; }
+  .cc-logo { font-size: 14px; font-weight: 900; }
+  .cc-logo span { color: #04aa6d; }
+  .cc-sep { width: 1px; height: 20px; background: rgba(255,255,255,0.12); margin: 0 12px; }
+  .cc-title { font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.65); flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .cc-actions { display: flex; gap: 8px; }
+  .cc-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 6px 12px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+    color: rgba(255,255,255,0.7);
+  }
+  .cc-btn:hover { background: rgba(255,255,255,0.15); color: white; }
+  .cc-btn svg { width: 14px; height: 14px; }
+  @media (max-width: 600px) {
+    .cc-title { display: none; }
+    .cc-btn span { display: none; }
+  }
+</style>
+<header id="cc-demo-header">
+  <div style="display: flex; align-items: center; overflow: hidden;">
+    <a href="https://codescompiler.com" class="cc-logo" target="_blank" rel="dofollow"><span>Codes</span>Compiler</a>
+    <div class="cc-sep"></div>
+    <h1 class="cc-title" title="How to Build an Infinite Carousel with HTML & CSS" style="margin: 0; font-size: 13px; font-weight: 600;">📺 How to Build an Infinite Carousel with HTML & CSS</h1>
+  </div>
+  <div class="cc-actions">
+    <a href="https://codescompiler.com/blog/how-to-build-an-infinite-carousel-with-html-css-2" class="cc-btn" target="_blank" rel="dofollow" title="Read the full post">
+      <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path></svg>
+      <span>Back to Post</span>
+    </a>
+    <a href="index.html" class="cc-btn" target="_blank" download="how-to-build-an-infinite-carousel-with-html-css-2.html" title="Download source file">
+      <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+      <span>Download</span>
+    </a>
+    <button onclick="document.getElementById('cc-demo-header').style.display='none'" class="cc-btn" title="Hide header for fullscreen view">
+      <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l5-5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"></path></svg>
+      <span>Fullscreen</span>
+    </button>
+  </div>
+</header>
+<!-- ================================== -->
+
+    <div class="marquee-wrapper">
+      <h2>Our Partners</h2>
+      <div class="marquee-container">
+        <div class="marquee-track">
+          <div class="marquee-item">CSS3</div>
+          <div class="marquee-item">HTML5</div>
+          <div class="marquee-item">JavaScript</div>
+          <div class="marquee-item">React</div>
+          <div class="marquee-item">Node.js</div>
+          <div class="marquee-item">Python</div>
+          <div class="marquee-item">Django</div>
+          <div class="marquee-item">Figma</div>
+          <div class="marquee-item">CSS3</div>
+          <div class="marquee-item">HTML5</div>
+          <div class="marquee-item">JavaScript</div>
+          <div class="marquee-item">React</div>
+          <div class="marquee-item">Node.js</div>
+          <div class="marquee-item">Python</div>
+          <div class="marquee-item">Django</div>
+          <div class="marquee-item">Figma</div>
+        </div>
+      </div>
+    </div>
+
+</body></html>
